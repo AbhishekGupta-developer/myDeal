@@ -49,10 +49,11 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductOutputDto> getAllProducts() {
-        List<Product> productList = productRepository.findAll();
+        List<Product> productList = productRepository.findAll(); //10 sec
 
-        List<ProductOutputDto> productOutputDtoList = new ArrayList<>();
+        List<ProductOutputDto> productOutputDtoList = new ArrayList<>(); //2 sec
 
+        //12 sec -> //10 sec
         for(Product product : productList) {
             ProductOutputDto productOutputDto = new ProductOutputDto();
 
